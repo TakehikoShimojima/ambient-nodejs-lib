@@ -1,0 +1,104 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/shimojimatakehiko/Dropbox/MyProject/Ambient/node/ambient-lib',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/shimojimatakehiko/.npm correctMkdir not in flight; initializing
+10 verbose tar pack [ '/Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package.tgz',
+10 verbose tar pack   '/Users/shimojimatakehiko/Dropbox/MyProject/Ambient/node/ambient-lib' ]
+11 verbose tarball /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package.tgz
+12 verbose folder /Users/shimojimatakehiko/Dropbox/MyProject/Ambient/node/ambient-lib
+13 info prepublish ambient-lib@0.1.0
+14 verbose addLocalTarball adding from inside cache /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package.tgz
+15 verbose correctMkdir /Users/shimojimatakehiko/.npm correctMkdir not in flight; initializing
+16 silly cache afterAdd ambient-lib@0.1.0
+17 verbose afterAdd /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package/package.json not in flight; writing
+18 verbose correctMkdir /Users/shimojimatakehiko/.npm correctMkdir not in flight; initializing
+19 verbose afterAdd /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package/package.json written
+20 silly publish { name: 'ambient-lib',
+20 silly publish   version: '0.1.0',
+20 silly publish   description: 'Ambient library. Ambient is a cloud service for IoT, Internet of Things. It receives sensor data, stores it and visualize them.',
+20 silly publish   main: 'index.js',
+20 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+20 silly publish   repository:
+20 silly publish    { type: 'git',
+20 silly publish      url: 'git+https://github.com/TakehikoShimojima/ambient-nodejs-lib.git' },
+20 silly publish   author: { name: 'Takehiko Shimojima' },
+20 silly publish   license: 'MIT',
+20 silly publish   bugs: { url: 'https://github.com/TakehikoShimojima/ambient-nodejs-lib/issues' },
+20 silly publish   homepage: 'https://github.com/TakehikoShimojima/ambient-nodejs-lib#readme',
+20 silly publish   dependencies: { request: '^2.73.0' },
+20 silly publish   readme: '# ambient-lib Ambientのnode.jsライブラリー\n\n## Ambient\n[Ambient](https://ambidata.io)はIoT用のクラウドサービスで、センサーデーターを受信し、蓄積し、可視化(グラフ化)します。\nambient-libはAmbientのnode.jsライブラリーです。\n\n## インストール\n\n```sh\n$ npm install ambient-lib\n```\n\n## モジュールの読み込み\n\n```javascript\nvar ambient = require(\'ambient-lib\');\n```\n## Ambientへの接続\n\n```javascript\nambient.connect(チャネルId, ライトキー[, リードキー[, ユーザーキー]]);\n```\nAmbientにデーターを送信するときは、チャネルIdとライトキーを指定してAmbientに接続します。\n\n## Ambientへのデーター送信\n\n```javascript\nambient.send(data, callback(err, res, body));\n```\n\n* パラメーター\n * ```data```: 次のようなJSON形式で、キーは```d1```から```d8```のいずれかを指定します。\n```javascript\nvar data = {d1: 1.1, d2: 2.2};\n```\n * ```callback```: データー送信後に呼ばれるコールバック関数。パラメーターは```request```モジュールのコールバック関数のパラメーターと同じです。\n\nこんな風に使います。\n\n```javascript\nambient.send({d1: 1.1, d2: 2.2}, function(err, res, body) {\n    if (err) {\n        console.log(err);\n    }\n    console.log(res.statusCode);\n});\n```\n\n## Ambientへの複数データー一括送信\n\n複数データー一括送信も用意しました。\n\n```javascript\nambient.bulk_send(dataarray, callback(err, res, body));\n```\n\n* パラメーター\n * ```dataarray```: 次のような形式の配列です。\n ```created```はデーターの生成時刻で、値は“YYYY-MM-DD HH:mm:ss.sss”という形式か、 数値を渡します。\n 数値を渡した場合は1970年1月1日00:00:00からのミリ秒と解釈されます。\n\n```javascript\nvar dataarray = [\n    {created: \'2016-07-07 12:00:00\', d1: 1.1, d2: 2.1},\n    {created: \'2016-07-07 12:01:00\', d1: 1.5, d2: 3.8},\n    {created: \'2016-07-07 12:02:00\', d1: 1.0, d2: 0.8}\n];\n```\n',
+20 silly publish   readmeFilename: 'README.md',
+20 silly publish   gitHead: '30b37b464770b643b82824eeed1dcaa569fa5337',
+20 silly publish   _id: 'ambient-lib@0.1.0',
+20 silly publish   _shasum: 'efa654811f975115c7abf4042d8d4eefc203b815',
+20 silly publish   _from: '.' }
+21 verbose getPublishConfig undefined
+22 silly mapToRegistry name ambient-lib
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: 'ambient-lib',
+25 silly mapToRegistry   scope: null,
+25 silly mapToRegistry   name: 'ambient-lib',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/ambient-lib
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /Users/shimojimatakehiko/.npm/ambient-lib/0.1.0/package.tgz
+29 verbose request uri https://registry.npmjs.org/ambient-lib
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 09:26:19
+32 verbose request using bearer token for auth
+33 verbose request id d957100606bd0ca8
+34 http request PUT https://registry.npmjs.org/ambient-lib
+35 http 403 https://registry.npmjs.org/ambient-lib
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Tue, 12 Jul 2016 00:26:20 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-nrt6129-NRT',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1468283180.436383,VS0,VE458',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /Users/shimojimatakehiko/.npm/registry.npmjs.org/ambient-lib on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : ambient-lib
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+39 verbose stack     at emitTwo (events.js:87:13)
+39 verbose stack     at Request.emit (events.js:172:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+39 verbose stack     at emitOne (events.js:82:20)
+39 verbose stack     at Request.emit (events.js:169:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+40 verbose statusCode 403
+41 verbose pkgid ambient-lib
+42 verbose cwd /Users/shimojimatakehiko/Dropbox/MyProject/Ambient/node/ambient-lib
+43 error Darwin 15.5.0
+44 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+45 error node v4.4.5
+46 error npm  v2.15.5
+47 error code E403
+48 error "You cannot publish over the previously published version 0.1.0." : ambient-lib
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
