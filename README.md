@@ -1,7 +1,9 @@
 # ambient-lib Ambientのnode.jsライブラリー
 
+このリポジトリは古いです。[最新版はこちら](https://github.com/AmbientDataInc/ambient-nodejs-lib)をご覧ください。
+
 ## Ambient
-[Ambient](https://ambidata.io)はIoTクラウドサービスで、センサーデーターを受信し、蓄積し、可視化(グラフ化)します。
+[Ambient](https://ambidata.io)はIoTデータ可視化サービスで、センサーデーターを受信し、蓄積し、可視化(グラフ化)します。
 
 ![Ambient structure](https://ambidata.io/wp/wp-content/uploads/2016/09/AmbientStructure.jpg)
 
